@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+    composer:
+        image: composer:latest
+        volumes:
+            - ${APPLICATION_PATH}:/app
+        restart: never
+    php:
+        image: php:8.0.3-fpm
+        restart: never
+        volumes:
+            - ${APPLICATION_PATH}:/app
+        working_dir: /app
